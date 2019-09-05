@@ -13,13 +13,15 @@ class TodoForm extends React.Component {
     }
     handleSubmit= e => {
         this.props.addTask(e, this.state.task)
+        this.state.task = '';
     }
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form className='form' onSubmit={this.handleSubmit}>
                 <input
                 type='text'
                 name='task'
+                placeholder='Enter a Task'
                 value={this.state.task}
                 onChange={this.handleChange}
                 />
